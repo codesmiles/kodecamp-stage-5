@@ -4,9 +4,14 @@ const conn = require(`./mongoose`); //import mongoose
 
 const server = express(); //create express server
 
+
+
+// read json
+server.use(express.json());
+
+
 const routes = require(`./routers/routes`); //import routes
 server.use(`/`, routes); //use routes middleware
-// server.use(routes); //use routes
 
 
 
