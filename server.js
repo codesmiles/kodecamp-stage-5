@@ -1,19 +1,14 @@
 //jshint esversion:6
 const express = require(`express`); //import express
 const conn = require(`./mongoose`); //import mongoose
+const routes = require(`./routers/routes`); //import routes
 
 const server = express(); //create express server
 
 
+server.use(express.json());// read json
 
-// read json
-server.use(express.json());
-
-
-const routes = require(`./routers/routes`); //import routes
 server.use(`/`, routes); //use routes middleware
-
-
 
 
 //Listen an d create port

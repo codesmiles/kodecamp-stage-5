@@ -3,7 +3,6 @@ const router = express.Router(); //import express router
 const schema = require("../model/schema"); //import schema
 
 
-
 // get route
 router.get("/", async(req, res) => {
     try {
@@ -15,14 +14,11 @@ router.get("/", async(req, res) => {
     }
 });
  
+// post route
 router.post("/", async (req, res) => { 
-    const newData = new schema({
-        name: req.body.name,
-        course: req.body.course,
-        year: req.body.year
-    });
+ 
     try {
-        const data = await newData.save();
+        const data = await schema.create(req.body);
         res.json(data);
     }
     catch (err) {
@@ -30,6 +26,6 @@ router.post("/", async (req, res) => {
     }
 });
 
- 
+
 
 module.exports = router;

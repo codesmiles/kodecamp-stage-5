@@ -6,7 +6,4 @@ const mongooseSchema = new mongoose.Schema({
   year: { type:Number, required: true}
 });
 
-
-
-
 module.exports = mongoose.model("schema", mongooseSchema);
