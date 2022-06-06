@@ -6,6 +6,7 @@ mongoose.connect(url, { useNewUrlParser: true });
 const conn = mongoose.connection;
 
 conn.on("error", console.error.bind(console, "connection error:"));
+
 conn.on("connected", () => {
   console.log("connected to mongoDB");
 });
